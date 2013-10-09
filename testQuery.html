@@ -1,0 +1,22 @@
+<script>
+function getDocs(space_url)
+{
+
+osapi.jive.corev3.documents.get ({
+fields : '@all',
+count : 50,
+place : space_url
+}).execute(function(response) {
+	console.log("Documents: "+JSON.stringify(response));
+	console.log(response.name)
+	console.log(response.name.firstname)
+	
+	$('#firstname').text = response.name.firstname
+}
+}
+</script>
+
+<input type="button" id="test' value="clickhere">
+
+<div id="firstname">
+</div>
